@@ -39,9 +39,14 @@
 <body>
     <h1>¿Quieres ser mi San Valentín? ❤️</h1>
     <div class="buttons">
-        <button class="yes" onclick="alert('¡Sabía que dirías que sí! ❤️ME CONFORMO CON UN DIA')">Sí</button>
+        <button class="yes" onclick="irAPagina()">Sí</button>
         <button class="no" onmouseover="mueveBoton()">No</button>
     </div>
+ 
+    <!-- Música -->
+    <audio id="musica" autoplay loop>
+        <source src="TU_LINK_DE_MUSICA.mp3" type="audio/mp3">
+    </audio>
  
     <script>
         function mueveBoton() {
@@ -50,6 +55,15 @@
             let y = Math.random() * window.innerHeight;
 boton.style.left = x + "px";
 boton.style.top = y + "px";
+        }
+ 
+        function irAPagina() {
+            // Reproduce música
+            document.getElementById('musica').play();
+            // Redirige a otra página después de 2 segundos
+            setTimeout(function() {
+                window.location.href = "mensaje.html";
+            }, 2000);
         }
     </script>
 </body>
